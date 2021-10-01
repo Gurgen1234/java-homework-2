@@ -16,14 +16,16 @@ public class Main {
             Mutton mot = new Mutton();
             Worker wrk = new Worker();
             wrk.feed(zeb, mot);
-            Volier<Animal> herbivoreVolier = new Volier<Animal>(volierSize.m);
-            Volier<Animal> herbivoreVolier1 = new Volier<Animal>(volierSize.s);
-            herbivoreVolier.add(zeb);
+            Volier<Herbivore> herbivoreVolier = new Volier<Herbivore>(volierSize.m);
+            Volier<Сarnivorous> herbivoreVolier1 = new Volier<Сarnivorous>(volierSize.s);
+            System.out.println(zeb);
+            //herbivoreVolier.add(wolf); Выдает ошибку
             herbivoreVolier.add(zeb1);
-            herbivoreVolier1.add(zeb1);
+            herbivoreVolier.add(zeb );
+            //herbivoreVolier1.add(zeb);
             herbivoreVolier.remove("Зёбра");
-            System.out.println(herbivoreVolier.get("Зёбра"));
-            System.out.println(herbivoreVolier.get("Зебра"));
+            Zebra zebr = (Zebra) herbivoreVolier.get("Зебра");
+
 
 }
 }

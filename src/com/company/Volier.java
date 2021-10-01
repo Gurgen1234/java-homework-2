@@ -12,7 +12,7 @@ public class Volier<E extends Animal>{
     public Volier(volierSize v){
         this.volierSize = v;
     }
-    private static Map<String, Animal> volier = new HashMap<String, Animal>();
+    private Map<String, Animal> volier = new HashMap<String, Animal>();
     public void add(E animal){
         if(animal.getSize() == volierSize){
         volier.put(animal.getName(), animal);
