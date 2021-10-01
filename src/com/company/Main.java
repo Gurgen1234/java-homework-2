@@ -2,31 +2,28 @@ package com.company;
 
 import Animal.*;
 import Food.*;
-import sun.management.CompilerThreadStat;
 
 
 public class Main {
 
-    public static void main(String[] args) {
-        Zebra zeb = new Zebra();
-        Wolf wolf = new Wolf();
-        Beef beef = new Beef();
-        Apple ap = new Apple();
-        Seaweed sea = new Seaweed();
-        Mutton mot = new Mutton();
-        Worker wrk = new Worker();
-        wrk.feed(zeb,ap);
-        wrk.feed(zeb,mot);
-        wrk.feed(wolf,mot);
-        wrk.feed(zeb,mot);
-        wrk.feed(zeb,ap);
-        System.out.println(wrk.getVoice(wolf));
-        System.out.println();
-        Swim[] sw = new Swim[2];
-        sw[0] = new Som();
-        sw[1] = new Duck();
-        for(int i = 0;i< sw.length;i++){
-            sw[i].swim();
-        }
+    public static void main(String[] args){
+            Zebra zeb = new Zebra("Зебра");
+            Zebra zeb1 = new Zebra("Зёбра");
+            Wolf wolf = new Wolf("Волчок");
+            Beef beef = new Beef();
+            Apple ap = new Apple();
+            Seaweed sea = new Seaweed();
+            Mutton mot = new Mutton();
+            Worker wrk = new Worker();
+            wrk.feed(zeb, mot);
+            Volier<Animal> herbivoreVolier = new Volier<Animal>(volierSize.m);
+            Volier<Animal> herbivoreVolier1 = new Volier<Animal>(volierSize.s);
+            herbivoreVolier.add(zeb);
+            herbivoreVolier.add(zeb1);
+            herbivoreVolier1.add(zeb1);
+            herbivoreVolier.remove("Зёбра");
+            System.out.println(herbivoreVolier.get("Зёбра"));
+            System.out.println(herbivoreVolier.get("Зебра"));
+
 }
 }
